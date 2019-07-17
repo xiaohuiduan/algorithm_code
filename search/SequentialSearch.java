@@ -1,4 +1,6 @@
-public class SequentialSearch extends AbstractST{
+package search;
+
+public class SequentialSearch extends AbstractST {
 
     private class Node{
         Key key;

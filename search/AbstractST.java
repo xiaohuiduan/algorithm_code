@@ -1,3 +1,5 @@
+package search;
+
 public abstract class AbstractST<Key extends Comparable<Key>,Value>{
 
     /**
