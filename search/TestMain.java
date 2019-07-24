@@ -1,27 +1,32 @@
 package search;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class TestMain {
 
     public static void main(String[] args) {
-//        SequentialSearch<String,Integer> stringSequentialSearch = new SequentialSearch<>();
-//        stringSequentialSearch.put("A",1);
-//        stringSequentialSearch.put("B",2);
-//        stringSequentialSearch.put("C",13);
-//        System.out.println(stringSequentialSearch.delete("A").toString());
-//        System.out.println(stringSequentialSearch.get("A"));
-        HashMap hashMap = new HashMap();
+        BST<Integer,Integer> bst = new BST<>();
+        bst.put(2,2);
+            bst.put(1,1);
+        bst.put(3,3);
 
-        BinarySearchST<Integer,String> sequentialSearch = new BinarySearchST(3);
-        sequentialSearch.put(1,"veshi ");
-        sequentialSearch.put(2,"22 ");
-        sequentialSearch.put(3,"33");
-        System.out.println(sequentialSearch.get(3));
+            bst.delete(2);
 
-        System.out.println(sequentialSearch.delete(3));
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            Integer x =  random.nextInt(10);
+            bst.put(x,x);
+        }
+        for (int i = 1; i < 10; i++) {
+            System.out.println(bst.get(i));
+        }
 
-        System.out.println(sequentialSearch.get(3));
+        for (int i = 0; i < 3; i++) {
+            Integer x =  random.nextInt(30);
+            bst.delete(x);
+        }
+
 
     }
 }
