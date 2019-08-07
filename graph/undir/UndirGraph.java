@@ -71,11 +71,12 @@ public class UndirGraph extends Graph {
      */
     @Override
     boolean hasPathTo(int s, int v) {
-        return false;
+        DepthFirstSearchPath dfsPath = new DepthFirstSearchPath(this,s);
+        return dfsPath.hasPathTo(v);
     }
 
     /**
-     * 找出s到v结点的所有路径
+     * 找出s到v结点的路径
      *
      * @param s
      * @param v
@@ -83,6 +84,7 @@ public class UndirGraph extends Graph {
      */
     @Override
     Iterable<Integer> pathTo(int s, int v) {
-        return null;
+        DepthFirstSearchPath dfsPath = new DepthFirstSearchPath(this,s);
+        return dfsPath.pathTo(v);
     }
 }
